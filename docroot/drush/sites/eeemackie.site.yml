@@ -1,0 +1,39 @@
+dev:
+  root: /var/www/html/eeemackie.dev/docroot
+  ac-site: eeemackie
+  ac-env: dev
+  ac-realm: prod
+  uri: eeemackiedev.prod.acquia-sites.com
+  dev.livedev:
+    parent: '@eeemackie.dev'
+    root: /mnt/gfs/eeemackie.dev/livedev/docroot
+  host: eeemackiedev.ssh.prod.acquia-sites.com
+  user: eeemackie.dev
+  paths:
+    drush-script: drush9
+prod:
+  root: /var/www/html/eeemackie.prod/docroot
+  ac-site: eeemackie
+  ac-env: prod
+  ac-realm: prod
+  uri: eeemackie.prod.acquia-sites.com
+  prod.livedev:
+    parent: '@eeemackie.prod'
+    root: /mnt/gfs/eeemackie.prod/livedev/docroot
+  host: eeemackie.ssh.prod.acquia-sites.com
+  user: eeemackie.prod
+  paths:
+    drush-script: drush9
+test:
+  root: /var/www/html/eeemackie.test/docroot
+  ac-site: eeemackie
+  ac-env: test
+  ac-realm: prod
+  uri: eeemackiestg.prod.acquia-sites.com
+  test.livedev:
+    parent: '@eeemackie.test'
+    root: /mnt/gfs/eeemackie.test/livedev/docroot
+  host: eeemackiestg.ssh.prod.acquia-sites.com
+  user: eeemackie.test
+  paths:
+    drush-script: drush9
