@@ -1,0 +1,6 @@
+name: 'Remedy Rater React App'
+type: module
+description: 'A decoupled drupal block for Remedy Rater website.'
+core: 8.x
+package: 'React Blocks'
+core_version_requirement: ^8 || ^9
