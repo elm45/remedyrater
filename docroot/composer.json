@@ -17,11 +17,11 @@
     "require": {
         "composer/installers": "^1.2",
         "drupal/bootstrap_barrio": "^5.1",
-        "drupal/bootstrap_sass": "^5.0",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
         "drupal/core-vendor-hardening": "^9",
+        "drupal/devel": "^4.0",
         "drupal/mysql56": "^1.0@beta",
         "drush/drush": "^10.2"
     },
