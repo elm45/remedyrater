@@ -1,7 +1,7 @@
-node_modules/
+#node_modules/
 .DS_Store
 .cache/
-js/dist/
+#js/dist/
 coverage/
 .vscode/
 .env
