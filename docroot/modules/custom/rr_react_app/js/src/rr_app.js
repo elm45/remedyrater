@@ -2,9 +2,23 @@ import React, { useEffect, useState } from "react";
 
 // The display for each item in the list.
 // If this were more complex, it could be refactored into it's own component loaded.
-const NodeItem = ({drupal_internal__nid, title}) => (
+const UnListItem = ({ drupal_internal__nid, title }) => (
   <div>
     <a href={`/node/${drupal_internal__nid}`}>{title}</a>
+  </div>
+);
+
+const BootstrapCard = ({title, content, cta_src, cta_text}) => (
+  <div class="card">
+    <div class="card-body">
+      {title.length > 0 && <h5 class="card-title">{title}</h5>}
+      {content.length > 0 && <div class="card-text">{content}</div>}
+    </div>
+    {cta_src &&
+      <div class="card-footer text-muted">
+        <a href={`/node/${cta_src}`} class="btn btn-primary">{cta_text ? cta_text : 'Read more'}</a>
+      </div>
+    }
   </div>
 );
 
@@ -74,6 +88,7 @@ const RemedyRaterApp = () => {
               onChange={(event => setFilter(event.target.value.toLowerCase()))}
             />
           </div>
+          <div class="row">
           {
             content.filter((item) => {
               if (!filter) {
@@ -83,8 +98,20 @@ const RemedyRaterApp = () => {
               if (filter && (item.attributes.title.toLowerCase().includes(filter) || item.attributes.body.value.toLowerCase().includes(filter))) {
                 return item;
               }
-            }).map((item) => <NodeItem key={item.id} {...item.attributes} />)
+            }).map(
+              (item) =>
+                <div class="col-6 my-3 d-flex align-items-stretch">
+                  <BootstrapCard
+                    key={item.id}
+                    title={item.attributes.title}
+                    content={item.attributes.body.summary}
+                    cta_src={item.attributes.drupal_internal__nid}
+                    cta_text='Full article'
+                  />
+                </div>
+            )
           }
+          </div> {/* End row */}
         </>
       ) : (
           <NoData />
