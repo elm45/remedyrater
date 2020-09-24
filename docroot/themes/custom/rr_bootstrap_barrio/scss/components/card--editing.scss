@@ -1,0 +1,13 @@
+.card--editing {
+  border-color: $info;
+
+  .card-title {
+    position: absolute;
+    top: -1.1rem;
+    font-size: .85rem;
+    text-transform: uppercase;
+    margin-left: -.25rem;
+    color: $info;
+    font-weight: 600;
+  }
+}

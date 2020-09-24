@@ -9,7 +9,7 @@ base theme: bootstrap_barrio
 libraries:
   - rr_bootstrap_barrio/global-styling
 libraries-override:
-  bootstrap_barrio/global-styling: false
+  bootstrap_barrio/global-styling: true
   bootstrap_barrio/file: false
 regions:
   top_header: 'Top header'
