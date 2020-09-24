@@ -100,7 +100,7 @@ const RemedyRaterApp = () => {
               }
             }).map(
               (item) =>
-                <div class="col-6 my-3 d-flex align-items-stretch">
+                <div class="col-6 my-3">
                   <BootstrapCard
                     key={item.id}
                     title={item.attributes.title}

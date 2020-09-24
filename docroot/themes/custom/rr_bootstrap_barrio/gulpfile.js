@@ -57,14 +57,15 @@ function js () {
 
 // Static Server + watching scss/html files
 function serve () {
-  browserSync.init({
-    proxy: 'http://4536723d-e7d5-4213-a054-a7fbc3f8ca45.web.ahdev.cloud',
-  })
+  // browserSync.init({
+  //   proxy: 'http://4536723d-e7d5-4213-a054-a7fbc3f8ca45.web.ahdev.cloud',
+  // })
 
-  gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
+  // gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
+  gulp.watch([paths.scss.bootstrap], styles)
 }
 
-const build = gulp.series(styles, gulp.parallel(js, serve))
+const build = gulp.series(styles, gulp.parallel(js))
 
 exports.styles = styles
 exports.js = js

@@ -1,0 +1,28 @@
+.form--live-edit {
+  & label {
+    @include sr-only;
+  }
+  & input:not(.btn),
+  & textarea {
+    padding: .15rem .5rem;
+    margin: -.15rem -.5rem;
+    min-width: calc(100% + 1rem);
+    border: none;
+    width: 100%;
+    display: block;
+    color: $body-color;
+    border-radius: .25rem;
+    overflow: hidden;
+
+    &:focus {
+      outline: none;
+      background-color: lighten($info, 53%);
+      box-shadow: none;
+    }
+  }
+
+  & textarea.h5 {
+    margin-bottom: .6rem;
+  }
+
+}
